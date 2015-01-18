@@ -1,0 +1,19 @@
+{
+  "name": "myStocks",
+  "version": "1.0.0",
+  "description": "stock trading application using node server --express and jquery mobile",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "express": "^4.10.6",
+    "lodash": "^2.4.1",
+    "util": "^0.10.3",
+    "yahoo-finance": "^0.2.10"
+  }
+}

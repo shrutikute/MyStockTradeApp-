@@ -1,0 +1,21 @@
+{
+    "version": "0.0.7",
+    "name": "com.msopentech.websql",
+    "cordova_name": "Web SQL plugin",
+    "description": "Web Sql Plugin for Apache Cordova",
+    "license": "Apache 2.0",
+    "repo": "https://github.com/msopentech/cordova-plugin-websql/",
+    "issue": "https://github.com/msopentech/cordova-plugin-websql/issues",
+    "keywords": [
+        "cordova",
+        " websql",
+        " db",
+        " database"
+    ],
+    "platforms": [
+        "wp8",
+        "windows8",
+        "windows"
+    ],
+    "engines": []
+}

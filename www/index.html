@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" href="js/lib/jquery-mobile/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+
+    <!--<script type="text/javascript" src="cordova.js"></script>-->
+    <script type="text/javascript" src="js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/lib/jqm.page.params.js"></script>
+    <script src="js/cordova_plugins.js"></script>
+    <script src="js/cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <title>My Stocks</title>
+</head>
+<body>
+
+<div data-role="page" id="intropage">
+    <div data-role="panel" id="left-panel" data-theme="b">
+        <ul id="menu" data-role="listview">
+            <li><h1>Menu</h1></li>
+            <li class="login-menu-btn"><a href="#loginPage">Login</a></li>
+            <li><a href="#introContent">Search</a></li>
+            <li><a href="#myStocksContent">My Stocks</a></li>
+            <li style="display: none" class="logout-menu-btn"><a href="#logoutPage">Logout</a></li>
+        </ul>
+
+    </div>
+    <!-- /panel -->
+    <div data-role="header">
+        <a href="#left-panel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
+
+        <h1>Today's Stock<p></p></h1>
+
+    </div>
+    <div data-role="content" id="introContent">
+        <ul id="stocksList" data-filter="true" data-filter-reveal="true" data-role="listview"></ul>
+    </div>
+</div>
+
+
+<div data-role="page" id="myStocksContent">
+    <div data-role="header" data-add-back-btn="true">
+        <h1>My Stock<p></p></h1>
+
+    </div>
+    <div data-role="content" id="myStocksContainer">
+        <ul id="mystocksList" data-role="listview"></ul>
+    </div>
+</div>
+
+<div data-role="page" id="loginPage">
+    <div data-role="header" data-add-back-btn="true">
+        <h1>Login<p></p></h1>
+    </div>
+    <div data-role="content" id="usr-login-content">
+        <form id="usr-login-form">
+            <div data-role="fieldcontain">
+                <label for="usr-name">User Name:</label>
+                <input type="text" name="usr-name" id="usr-name" value=""/>
+                <label for="usr-pass">Password:</label>
+                <input type="password" name="usr-pass" id="usr-pass" value=""/>
+                <span><button data-theme="b" id="submit" type="submit">Submit</button></span>
+                <span><a href="#signupPage" data-theme="b" data-role="button" id="#signupPage">Sign Up</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div data-role="page" id="signupPage">
+    <div data-role="header" data-add-back-btn="true">
+        <h1>Create an Account<p></p></h1>
+    </div>
+    <div data-role="content" id="usr-signup-content">
+        <form id="usr-signup-form">
+            <div data-role="fieldcontain">
+                <label for="usr-name">User Name:</label>
+                <input type="text" name="usr-name" id="usr-name" value=""/>
+                <label for="usr-pass">Password:</label>
+                <input type="password" name="usr-pass" id="usr-pass" value=""/>
+                <span><button data-theme="b" id="submit" type="submit">Sign Me Up !</button></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div data-role="page" id="stockpage">
+    <div data-role="header" data-add-back-btn="true">
+        <h1><p>Details Page</p></h1>
+    </div>
+    <div data-role="content" id="stockpagecontent">
+        <table data-role="table" class="ui-responsive" id="stock-table">
+            <thead>
+            <th>Attribute</th>
+            <th>Value</th>
+            </thead>
+            <tbody class="stock-table-body"></tbody>
+
+        </table>
+    </div>
+</div>
+<script>
+
+    $(document).on("pagecreate", "#intropage", function (e) {
+        stocksApp.init();
+    });
+</script>
+</body>
+</html>
